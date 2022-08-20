@@ -1,0 +1,54 @@
+// X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+// @media (min-width: 576px) { @content }
+
+ // Medium devices (tablets, 768px and up)
+// @media (min-width: 768px) { @content }
+
+// Large devices (desktops, 992px and up)
+// @media (min-width: 992px) { @content }
+
+// X-Large devices (large desktops, 1200px and up)
+// @media (min-width: 1200px) {@content }
+
+// XX-Large devices (larger desktops, 1400px and up)
+// @media (min-width: 1400px) { @content }
+
+
+$breakpoints-up: ("xs": "376px","sm": "576px","medium": "768px", "large": "992px", "xlarge": "1200px");
+
+// 639px, 1023px, 1399px
+$breakpoints-down: ("xs": "376px","sm": "576px","medium": "768px", "large": "992px", "xlarge": "1200px");
+
+@mixin media-breakpoint-up($size){
+  @media (min-width: map-get($breakpoints-up, $size)){
+    @content;
+  }
+}
+
+
+// `xs` returns only a ruleset and no media query
+// ... { ... }
+
+// // `sm` applies to x-small devices (portrait phones, less than 576px)
+// @media (max-width: 575.98px) { ... }
+
+// // `md` applies to small devices (landscape phones, less than 768px)
+// @media (max-width: 767.98px) { ... }
+
+// // `lg` applies to medium devices (tablets, less than 992px)
+// @media (max-width: 991.98px) { ... }
+
+// // `xl` applies to large devices (desktops, less than 1200px)
+// @media (max-width: 1199.98px) { ... }
+
+// // `xxl` applies to x-large devices (large desktops, less than 1400px)
+// @media (max-width: 1399.98px) { ... }
+
+@mixin media-breakpoint-down($size){
+  @media (max-width: map-get($breakpoints-down, $size)){
+    @content;
+  }
+}
