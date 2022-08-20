@@ -53,23 +53,21 @@ function getDetails(e) {
   });
 
   getMovieCredits(credit).then((data) => {
-    let main_cast = '';
-    let are =[];
+    let main_cast = "";
+    let are = [];
     let character = "";
-    let arr = []
+    let arr = [];
     const { cast, crew } = data;
     const { name, job } = crew[0];
     for (let i = 0; i < 4; i++) {
       // main_cast += " " + cast[i].original_name ;
       character += cast[i].character;
-      arr.push(cast[i].original_name)
+      arr.push(cast[i].original_name);
     }
-    main_cast = arr.join(',')
-    console.log(  ``)
+    main_cast = arr.join(", ");
+    console.log(``);
     tit.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML = ` <span class="fw-bold">Cast: </span> ${main_cast} `;
     tit.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML = `<span class="fw-bold">Director:</span> ${name}`;
-
-
   });
 
   getDetail(target_iD).then((movie) => {
@@ -88,7 +86,7 @@ function getDetails(e) {
 
     tit.innerHTML = `${title}`;
     tit.nextElementSibling.innerHTML = `  ${overview}`;
-    tit.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML = `<span class="fw-bold">Release Date:</span> ${release_date}`
+    tit.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML = `<span class="fw-bold">Release Date:</span> ${release_date}`;
     img.setAttribute("src", `${IMG_URL + poster_path}`);
     console.log(movie);
     genres.forEach((iD) => {
@@ -115,19 +113,19 @@ form.addEventListener("submit", (e) => {
   let term = searchword.value;
   let su = searchURL + term;
   search(su).then((search) => {
-   let nr = document.querySelector('.noresult')
-    let con = document.querySelector('.cons')
+    let nr = document.querySelector(".noresult");
+    let con = document.querySelector(".cons");
     if (search.length === 0) {
-      sr.style.display ='none'
+      sr.style.display = "none";
       //res.style.display = 'block'
       search1.innerHTML = "Search Result";
-      nr.innerHTML = 'No result found...'
+      nr.innerHTML = "No result found...";
       console.log(search);
     } else {
       search.forEach((search) => {
         console.log(search);
-        nr.innerHTML = ''
-        sr.style.display ='flex'
+        nr.innerHTML = "";
+        sr.style.display = "flex";
         showMovies(search, "search");
       });
     }
@@ -141,7 +139,7 @@ function showMovies(movie, option) {
   const col = document.createElement("div");
   col.classList.add("col");
   col.classList.add("d-flex");
-  col.classList.add('justify-content-center')
+  col.classList.add("justify-content-center");
   col.innerHTML = `
           <a class="card text-warning"  href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" >
               <div class="card-body" id="${id}"  >
