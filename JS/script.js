@@ -110,7 +110,7 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
   window.scrollTo(0, 700);
   const searchword = document.querySelector("#search");
-  let term = searchword.value;
+  var term = searchword.value;
   let su = searchURL + term;
   search(su).then((search) => {
     let nr = document.querySelector(".noresult");
@@ -122,11 +122,13 @@ form.addEventListener("submit", (e) => {
       nr.innerHTML = "No result found...";
       console.log(search);
     } else {
+      sr.innerHTML = ''
       search.forEach((search) => {
         console.log(search);
         nr.innerHTML = "";
         sr.style.display = "flex";
         showMovies(search, "search");
+       
       });
     }
   });
@@ -163,8 +165,9 @@ function showMovies(movie, option) {
     pop.innerHTML = "Popular";
   } else if (option === "search") {
     search1.innerHTML = "Search Result";
-    sr.appendChild(col);
+    sr.append(col);
   }
+ 
   const ro = document.querySelectorAll(".row");
   addListener(ro);
 }
