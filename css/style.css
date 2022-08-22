@@ -110,6 +110,20 @@ a {
   }
 }
 
+@media (max-width: 576px) {
+  .row .card {
+    width: 130px !important;
+    height: 315px !important;
+    padding-bottom: 2.7rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .row .card {
+    padding-bottom: 1.9rem;
+  }
+}
+
 @media (min-width: 768px) {
   .row .card {
     width: 200px !important;

@@ -25,9 +25,20 @@ a{
         width: 150px!important;
         height:315px!important;
       } 
+      @include media-breakpoint-down(sm) {
+        width: 130px!important;
+        height:315px!important;
+        padding-bottom: 2.7rem;
+      } 
+      @include media-breakpoint-down(medium) {
+        // width: 180px!important;
+        // height:315px!important;
+        padding-bottom: 1.9rem;
+      } 
         @include media-breakpoint-up(medium) {
         width: 200px !important;
         height:300px !important;
+       // padding-bottom: 7rem;
       }
     @include media-breakpoint-up(large) {
       //width: 270px !important;

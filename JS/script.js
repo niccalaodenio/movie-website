@@ -144,15 +144,15 @@ function showMovies(movie, option) {
   col.classList.add("justify-content-center");
   col.innerHTML = `
           <a class="card text-warning"  href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" >
-              <div class="card-body" id="${id}"  >
+              <div class="card-body p-2 p-md-3" id="${id}"  >
                   <img class="img-fluid " style="pointer-events:none"src="${
                     poster_path
                       ? IMG_URL + poster_path
                       : "http://via.placeholder.com/1080x1580"
                   }" alt="${title}">
                   <div class="movie-info"style="pointer-events:none">
-                      <p class="fs-5 mt-md-2 mb-lg-0">${title}
-                      </p>  <span  >${vote_average}</span>
+                      <p class="fs-5 mt-md-2 mt-2 mb-0 mb-lg-0">${title}
+                      </p>  <span class="" >${vote_average}</span>
                   </div>
               </div>
           </a>
