@@ -142,20 +142,21 @@ function showMovies(movie, option) {
   col.classList.add("col");
   col.classList.add("d-flex");
   col.classList.add("justify-content-center");
-  let star = '⭐⭐⭐';
+  let star = '⭐⭐⭐⭐';
+  let star1 = '⭐⭐⭐';
   let s = '⭐';
   let rate ;
-  if(vote_average >= 5 && vote_average <=10){
-    rate = `${vote_average} ${star}` 
-  }else if(vote_average < 5 && vote_average >= 3){
-    rate = `${vote_average} ${s}`
-  }else if( vote_average === 0){
-    rate = `${   vote_average}`
+  if(vote_average >= 8 && vote_average <= 10){
+    rate = `${vote_average}<span class="star" > ${star}</span>` ;
+  }else if(vote_average >= 5 || vote_average <= 7){
+    rate = `${vote_average} <span class="star" >${star1}</span>`;
+  }else if( vote_average <= 4 && vote_average === 0){
+    rate = `${vote_average} <span class="star" > ${s}</span>`;
   }
   col.innerHTML = `
           <a class="card text-warning"  href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" >
               <div class="card-body p-2 p-md-3" id="${id}"  >
-                  <img class="img-fluid " style="pointer-events:none"src="${
+                  <img loading="lazy" class="img-fluid " style="pointer-events:none"src="${
                     poster_path
                       ? IMG_URL + poster_path
                       : "http://via.placeholder.com/1080x1580"

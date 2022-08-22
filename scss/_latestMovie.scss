@@ -66,4 +66,17 @@ a{
 }
 span.spa{
   font-size: .8rem!important;
+   
+}
+span.star{
+  margin-left: 2.2rem;
+  @include media-breakpoint-up(sm){
+    margin-left: 3rem;
+  }
+  @include media-breakpoint-up(medium){
+    margin-left: 4.4rem;
+  }
+  @include media-breakpoint-up(large){
+    margin-left: 4.6rem;
+  }
 }
