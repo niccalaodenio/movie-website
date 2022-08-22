@@ -142,6 +142,16 @@ function showMovies(movie, option) {
   col.classList.add("col");
   col.classList.add("d-flex");
   col.classList.add("justify-content-center");
+  let star = '⭐⭐⭐';
+  let s = '⭐';
+  let rate ;
+  if(vote_average >= 5 && vote_average <=10){
+    rate = `${vote_average} ${star}` 
+  }else if(vote_average < 5 && vote_average >= 3){
+    rate = `${vote_average} ${s}`
+  }else if( vote_average === 0){
+    rate = `${   vote_average}`
+  }
   col.innerHTML = `
           <a class="card text-warning"  href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" >
               <div class="card-body p-2 p-md-3" id="${id}"  >
@@ -152,7 +162,8 @@ function showMovies(movie, option) {
                   }" alt="${title}">
                   <div class="movie-info"style="pointer-events:none">
                       <p class="fs-5 mt-md-2 mt-2 mb-0 mb-lg-0">${title}
-                      </p>  <span class="" >${vote_average}</span>
+                      </p>  
+                      <span class="spa" >${rate}</span>
                   </div>
               </div>
           </a>

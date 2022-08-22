@@ -114,13 +114,12 @@ a {
   .row .card {
     width: 130px !important;
     height: 315px !important;
-    padding-bottom: 2.7rem;
   }
 }
 
 @media (max-width: 768px) {
   .row .card {
-    padding-bottom: 1.9rem;
+    padding-bottom: 3rem;
   }
 }
 
@@ -133,6 +132,10 @@ a {
 
 .row .card .card-body {
   height: 100% !important;
+}
+
+span.spa {
+  font-size: 0.8rem !important;
 }
 
 .ads {

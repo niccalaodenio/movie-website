@@ -28,12 +28,12 @@ a{
       @include media-breakpoint-down(sm) {
         width: 130px!important;
         height:315px!important;
-        padding-bottom: 2.7rem;
+        //padding-bottom: 3rem;
       } 
       @include media-breakpoint-down(medium) {
         // width: 180px!important;
         // height:315px!important;
-        padding-bottom: 1.9rem;
+        padding-bottom: 3rem;
       } 
         @include media-breakpoint-up(medium) {
         width: 200px !important;
@@ -63,4 +63,7 @@ a{
 //     width: 90% !important;
 
 //   }
+}
+span.spa{
+  font-size: .8rem!important;
 }
